@@ -368,26 +368,6 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
     if ( eventPort != NULL )
     {
 
-		// Check if permission is granted to send AppleEvents to the running app target, and prompt if not set
-		if ( @available(macOS 10.14, *) )
-		{
-
-			iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:[self iTunesBundleIdentifier]];
-			SpotifyApplication *spotify = [SBApplication applicationWithBundleIdentifier:@"com.spotify.client"];
-			
-			if ( spotify != nil )
-			{
-				NSAppleEventDescriptor *targetAppEventDescriptor = [NSAppleEventDescriptor descriptorWithBundleIdentifier:@"com.spotify.client"];
-				AEDeterminePermissionToAutomateTarget([targetAppEventDescriptor aeDesc], typeWildCard, typeWildCard, true);
-			}
-			
-			if ( iTunes != nil )
-			{
-				NSAppleEventDescriptor *targetAppEventDescriptor = [NSAppleEventDescriptor descriptorWithBundleIdentifier:[self iTunesBundleIdentifier]];
-				AEDeterminePermissionToAutomateTarget([targetAppEventDescriptor aeDesc], typeWildCard, typeWildCard, true);
-			}
-		}
-		
 		eventPortSource = CFMachPortCreateRunLoopSource( kCFAllocatorSystemDefault, eventPort, 0 );
 		
 		[self startEventSession];
