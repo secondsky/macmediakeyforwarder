@@ -71,6 +71,10 @@ Thank you!!!
 
 ---
 
+*What's new in version 3.1.2 :*
+- Lower minimum version to macOS 10.14
+- App is now signed.
+
 *What's new in version 3.1.1 :*
 - Fix freeze at launch
 - Update for macOS 12.3
