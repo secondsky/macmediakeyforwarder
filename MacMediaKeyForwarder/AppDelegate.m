@@ -426,7 +426,7 @@ static CGEventRef tapEventCallback(CGEventTapProxy proxy, CGEventType type, CGEv
 
 - ( void ) update
 {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString: @"http://milgra.com/mac-media-key-forwarder.html"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString: @"https://github.com/quentinlesceller/macmediakeyforwarder/releases"]];
 }
 
 
